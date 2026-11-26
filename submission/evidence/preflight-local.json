@@ -1,0 +1,74 @@
+{
+  "testedAt": "2026-11-20T00:15:06.4876576+09:00",
+  "failures": 0,
+  "warnings": 0,
+  "readyForAI": true,
+  "checks": [
+    {
+      "name": "QualityMate.exe",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "coreclr.dll",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "appsettings.json",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "knowledge/standards.json",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "wwwroot/index.html",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "wwwroot/polish.css",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "wwwroot/polish.js",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "wwwroot/rose.css",
+      "status": "pass",
+      "detail": "Required package file; extract the complete ZIP if missing."
+    },
+    {
+      "name": "Windows x64",
+      "status": "pass",
+      "detail": "The distributed runtime requires Windows x64."
+    },
+    {
+      "name": "Data write permission",
+      "status": "pass",
+      "detail": "Folder is writable; existing data is unchanged."
+    },
+    {
+      "name": "Configuration",
+      "status": "pass",
+      "detail": "http://127.0.0.1:5187/; model kanana2:3b"
+    },
+    {
+      "name": "AI model",
+      "status": "pass",
+      "detail": "Model is installed. First answer can take longer while loading."
+    },
+    {
+      "name": "Application port",
+      "status": "pass",
+      "detail": "QualityMate already running. Open its existing page instead of starting a second server."
+    }
+  ],
+  "scope": "This PC only. No model installation, database changes or verification on another PC."
+}

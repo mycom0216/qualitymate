@@ -1,0 +1,322 @@
+[
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 1,
+    "pass": true,
+    "question": "표면 흠집을 어떻게 확인하나요?",
+    "expectedSource": "SOP-01",
+    "milliseconds": 13720,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-02"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 2,
+    "pass": true,
+    "question": "흠집 원인을 확정할 수 있나요?",
+    "expectedSource": "SOP-01",
+    "milliseconds": 1875,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-02"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 3,
+    "pass": true,
+    "question": "흠집 제품 출하 전에 무엇을 하나요?",
+    "expectedSource": "SOP-01",
+    "milliseconds": 2688,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-03",
+      "SOP-02"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "retrieval-only",
+    "id": 4,
+    "pass": false,
+    "question": "재검사에 필요한 기록은 무엇인가요?",
+    "expectedSource": "SOP-03",
+    "milliseconds": 2257,
+    "answer": "AI 연결을 사용할 수 없어 검색된 표준서 원문을 표시합니다. 아래 근거와 검사 사실을 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": false,
+    "sources": [
+      "SOP-01",
+      "SOP-03"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 5,
+    "pass": true,
+    "question": "재검사하면 최초 이력은 어떻게 되나요?",
+    "expectedSource": "SOP-03",
+    "milliseconds": 2278,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-03"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 6,
+    "pass": true,
+    "question": "재검사 합격 후 출하 승인 절차는?",
+    "expectedSource": "SOP-03",
+    "milliseconds": 1515,
+    "answer": "정상 판정은 기록된 검사 범위에 대한 결과이며 모든 결함의 부재를 보증하지 않는다. [SOP-04]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-03",
+      "SOP-04"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 7,
+    "pass": true,
+    "question": "이물 의심 제품은 무엇을 확인하나요?",
+    "expectedSource": "SOP-02",
+    "milliseconds": 7370,
+    "answer": "이물이 의심되는 제품은 분리 보관한다. [SOP-02]\n제품 표면과 검사 장치 렌즈의 오염 여부를 각각 확인한다. [SOP-02]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-02",
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "retrieval-only",
+    "id": 8,
+    "pass": false,
+    "question": "렌즈 오염 확인 절차를 알려주세요.",
+    "expectedSource": "SOP-02",
+    "milliseconds": 4968,
+    "answer": "AI 연결을 사용할 수 없어 검색된 표준서 원문을 표시합니다. 아래 근거와 검사 사실을 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": false,
+    "sources": [
+      "SOP-02",
+      "SOP-03",
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 9,
+    "pass": true,
+    "question": "이물 원인을 검사 이미지만으로 확정하나요?",
+    "expectedSource": "SOP-02",
+    "milliseconds": 7119,
+    "answer": "이물이 의심되는 제품은 분리 보관한다. [SOP-02]\n제품 표면과 검사 장치 렌즈의 오염 여부를 각각 확인한다. [SOP-02]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-02",
+      "SOP-01",
+      "SOP-03"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 10,
+    "pass": true,
+    "question": "이물 제품 보관은 어떻게 하나요?",
+    "expectedSource": "SOP-02",
+    "milliseconds": 2292,
+    "answer": "이물이 의심되는 제품은 분리 보관한다. [SOP-02]\n제품 표면과 검사 장치 렌즈의 오염 여부를 각각 확인한다. [SOP-02]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-02",
+      "SOP-04",
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 11,
+    "pass": true,
+    "question": "정상 제품도 보관하나요?",
+    "expectedSource": "SOP-04",
+    "milliseconds": 2852,
+    "answer": "정상 판정 제품도 제품 번호와 검사 시각을 추적할 수 있도록 보관한다. [SOP-04]\n정상 판정은 기록된 검사 범위에 대한 결과이며 모든 결함의 부재를 보증하지 않는다. [SOP-04]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-04"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 12,
+    "pass": true,
+    "question": "정상 판정이 모든 결함의 부재를 보증하나요?",
+    "expectedSource": "SOP-04",
+    "milliseconds": 2523,
+    "answer": "정상 판정 제품도 제품 번호와 검사 시각을 추적할 수 있도록 보관한다. [SOP-04]\n정상 판정은 기록된 검사 범위에 대한 결과이며 모든 결함의 부재를 보증하지 않는다. [SOP-04]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-04"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 13,
+    "pass": true,
+    "question": "재검사 전 제품 식별 번호를 확인하나요?",
+    "expectedSource": "SOP-03",
+    "milliseconds": 1734,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01",
+      "SOP-03",
+      "SOP-02"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "retrieval-only",
+    "id": 14,
+    "pass": false,
+    "question": "재검사 조건은 어떻게 유지하나요?",
+    "expectedSource": "SOP-02",
+    "milliseconds": 2586,
+    "answer": "AI 연결을 사용할 수 없어 검색된 표준서 원문을 표시합니다. 아래 근거와 검사 사실을 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": false,
+    "sources": [
+      "SOP-02",
+      "SOP-03",
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 15,
+    "pass": true,
+    "question": "흠집 검사에서 조명 반사를 확인하나요?",
+    "expectedSource": "SOP-01",
+    "milliseconds": 1316,
+    "answer": "표면 흠집이 의심되는 제품은 출하를 보류한다. [SOP-01]\n검사 이미지를 확인하고 조명 반사 또는 실제 표면 손상 여부를 검사자가 확인한다. [SOP-01]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "llm",
+    "id": 16,
+    "pass": true,
+    "question": "이물 의심 제품은 분리하나요?",
+    "expectedSource": "SOP-02",
+    "milliseconds": 2415,
+    "answer": "이물이 의심되는 제품은 분리 보관한다. [SOP-02]\n제품 표면과 검사 장치 렌즈의 오염 여부를 각각 확인한다. [SOP-02]",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      "SOP-02",
+      "SOP-01"
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "no-evidence",
+    "id": 17,
+    "pass": true,
+    "question": "내일 날씨는 어떤가요?",
+    "expectedSource": null,
+    "milliseconds": 2,
+    "answer": "관련 표준서 근거를 찾지 못했습니다. 질문을 바꾸거나 담당자에게 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      null
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "no-evidence",
+    "id": 18,
+    "pass": true,
+    "question": "서울 맛집 추천",
+    "expectedSource": null,
+    "milliseconds": 2,
+    "answer": "관련 표준서 근거를 찾지 못했습니다. 질문을 바꾸거나 담당자에게 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      null
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "no-evidence",
+    "id": 19,
+    "pass": true,
+    "question": "주식 시세 알려줘",
+    "expectedSource": null,
+    "milliseconds": 2,
+    "answer": "관련 표준서 근거를 찾지 못했습니다. 질문을 바꾸거나 담당자에게 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      null
+    ]
+  },
+  {
+    "groundingPass": true,
+    "mode": "no-evidence",
+    "id": 20,
+    "pass": true,
+    "question": "해외 여행 예약 도와줘",
+    "expectedSource": null,
+    "milliseconds": 2,
+    "answer": "관련 표준서 근거를 찾지 못했습니다. 질문을 바꾸거나 담당자에게 확인하세요.",
+    "retrievalPass": true,
+    "citationPass": true,
+    "sources": [
+      null
+    ]
+  }
+]

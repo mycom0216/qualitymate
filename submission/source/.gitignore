@@ -1,0 +1,7 @@
+bin/
+obj/
+data/
+tmp/
+submission/
+output/
+.chart-data-*/

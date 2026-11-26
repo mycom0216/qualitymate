@@ -1,0 +1,211 @@
+/* code-theme.css  -  코드 배경 테마와 작업 화면 마감 */
+/* 역할: index.html의 .code-backdrop(InspectionStore.cs 코드 일부를 흐리게 깐 장식)과 .hero-code 창, */
+/*       코드 색상 클래스(.code-keyword, .code-string)를 정의한다. 그 밖에 사이드바, 머리 영역, 요약 카드, 제품 목록 등의 모양도 덮어써 마감한다. 기능과 무관한 꾸밈이다. */
+/* 순서: style.css 다음에 로드되며 이후 polish.css, rose.css가 다시 덮어쓴다. */
+/* Code background and workspace finish. Decorative code is an excerpt of InspectionStore.cs. */
+body {
+  background:
+    radial-gradient(ellipse at 87% 6%, #173e5e66, transparent 40%),
+    radial-gradient(ellipse at 13% 48%, #163d3b33, transparent 35%),
+    #080e18;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#90c9eb07 1px, transparent 1px),
+    linear-gradient(90deg, #90c9eb07 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, #000, transparent 85%);
+}
+.code-backdrop {
+  position: fixed;
+  inset: 0 0 0 204px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+  mask-image: linear-gradient(to bottom, #000, #0008 65%, transparent);
+}
+.code-backdrop pre {
+  position: absolute;
+  margin: 0;
+  color: #8faec8;
+  font: 13px/2.3 var(--mono);
+  opacity: .095;
+  white-space: pre;
+  transform: rotate(-8deg);
+}
+.code-backdrop pre:first-child { left: 45%; top: 36px; }
+.code-backdrop pre:last-child { left: 1%; top: 730px; transform: rotate(-8deg) scale(1.15); opacity: .06; }
+.code-keyword { color: #bca4f8; }
+.code-string { color: #68dfbc; }
+main { position: relative; z-index: 1; }
+aside {
+  background: linear-gradient(180deg, #0a121fef, #0b121dee);
+  border-color: #8fc9ec1c;
+  backdrop-filter: blur(20px);
+}
+.brand-mark {
+  border: 1px solid #b7ffe0a0;
+  box-shadow: 0 0 26px #64e6c127, inset 0 1px 0 #e0fff3c0;
+}
+nav a.nav-active {
+  background: linear-gradient(100deg, #183e36cc, #112328aa);
+  border-color: #467a655e;
+  box-shadow: 0 4px 18px #0002, inset 2px 0 0 #6ce6bf;
+}
+.topbar { border-color: #8bc2e315; }
+header {
+  position: relative;
+  isolation: isolate;
+  min-height: 235px;
+  margin: 24px 0;
+  padding: 30px 32px 66px;
+  overflow: hidden;
+  border: 1px solid #80d3e32c;
+  border-radius: 17px;
+  background:
+    radial-gradient(ellipse at 85% 20%, #21627935, transparent 65%),
+    linear-gradient(115deg, #14232eea 0%, #101d2ce3 55%, #14213ce6);
+  box-shadow: 0 16px 50px #00000022, inset 0 1px 0 #d1f9ff0a;
+}
+header::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #64e1c76e, #6d90fa45, transparent);
+}
+.hero-copy { position: relative; z-index: 2; width: 52%; align-self: flex-start; }
+h1 { font-size: clamp(28px, 2.7vw, 40px); line-height: 1.35; font-weight: 700; letter-spacing: -1.8px; color: #f0f7ff; text-shadow: 0 2px 20px #a1f7ef08; }
+.title-dot { color: #7ae8c7; }
+.subtitle { color: #99aec6; font-size: 13px; line-height: 1.9; margin-top: 12px; }
+header > .badge { position: absolute; left: 32px; bottom: 23px; z-index: 2; background: #0d2d26; border-color: #3e796255; }
+.hero-code {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 53%;
+  height: 213px;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+  border: 1px solid #5c819b55;
+  border-radius: 11px;
+  color: #a7bdd2;
+  background: linear-gradient(135deg, #101d2fe8, #081421e0);
+  box-shadow: -18px 15px 70px #060e2140, inset 0 1px 0 #c1dfff12;
+  transform: perspective(1000px) rotateY(-8deg) rotateZ(-1.8deg);
+  transform-origin: right center;
+  mask-image: linear-gradient(to right, transparent, #000 13%, #000);
+  opacity: .85;
+}
+.code-windowbar {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  padding: 0 16px;
+  background: #23304855;
+  border-bottom: 1px solid #51647b33;
+  color: #7d98b1;
+  font: 10px var(--mono);
+}
+.window-dots { display: flex; gap: 5px; }
+.window-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d982896e; }
+.window-dots i:nth-child(2) { background: #d6ae726e; }
+.window-dots i:nth-child(3) { background: #6bc9ae8c; }
+.code-language { margin-left: auto; color: #72b5ce; }
+.hero-code pre { margin: 14px 18px; font: 11px/1.85 var(--mono); white-space: pre; }
+.metrics { gap: 17px; }
+.metrics article {
+  padding: 21px 23px;
+  border-color: #aacff026;
+  border-radius: 13px;
+  background: linear-gradient(125deg, #192739e8, #111b2bd6);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px #0207121a, inset 0 1px 0 #bfe1ff08;
+}
+.metrics strong { font-size: 34px; }
+.metric-icon { box-shadow: inset 0 1px 0 #b6cbff12, 0 0 24px #6d9dff0b; }
+.import { background: #111d2a99; border-color: #4f738c55; backdrop-filter: blur(12px); }
+.card {
+  border-color: #a1c6ef26;
+  border-radius: 13px;
+  background: linear-gradient(150deg, #172333eb, #111c2bdd);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 12px 34px #02071026, inset 0 1px 0 #dcf0ff08;
+}
+.product-panel .panel-heading, .detail-panel > h2 { color: #dbeeff; }
+.detail-panel > h2 { border-bottom-color: #86b5d426; }
+.product { border-radius: 8px; }
+.product.active {
+  background: linear-gradient(100deg, #17463ca8, #17393290);
+  border-color: #6bd6b542;
+  box-shadow: inset 2px 0 0 #82eecb, 0 4px 16px #0a38241c;
+}
+.search, input, textarea, select { background-color: #091321a6; border-color: #769fc235; }
+.timeline { background: #0d1826bb; border-color: #7799b229; border-left-color: #578caa; }
+.timeline:has(b) { border-left-color: #66e7b7; }
+.assistant {
+  border-color: #76bde554;
+  background: linear-gradient(145deg, #192d40ed, #112237e8 45%, #102035e8);
+  box-shadow: 0 15px 50px #010b182b, 0 0 36px #388da507, inset 0 1px 0 #bce9ff14;
+}
+.assistant-heading {
+  border-bottom-color: #6f9db92c;
+  background: linear-gradient(100deg, #19394350, #172b450d);
+}
+.assistant-mark {
+  color: #a2ffe1;
+  background: radial-gradient(circle at 30% 20%, #417e7866, #173e4966);
+  border-color: #78d2bf55;
+  box-shadow: 0 0 24px #7deccc12;
+}
+.suggestions button { background: #15273d88; border-color: #88b1d32b; }
+.bubble { border-color: #7cb4d82c; background: #10253bce; box-shadow: 0 6px 20px #0000000c; }
+.bubble.question { background: linear-gradient(110deg, #245342cf, #1b4035ba); border-color: #6ab69044; }
+.composer { border-color: #88bdd54a; background: #0a1626b8; box-shadow: inset 0 1px 4px #0002; }
+#chat { background: #0b1b2b8c; border-color: #80b6d32b; }
+.primary, .send-button { background: linear-gradient(135deg, #93f2d0, #5fd4af); box-shadow: 0 4px 15px #54bfa514, inset 0 1px 0 #d4fff2aa; }
+.standards { background: linear-gradient(125deg, #162332df, #111c2bde); }
+@media (min-width: 1700px) {
+  .hero-code pre { font-size: 13px; }
+  .hero-code { right: 22px; }
+}
+@media (max-width: 1230px) {
+  .code-backdrop { left: 185px; }
+  header { min-height: 223px; padding-left: 26px; }
+  header > .badge { left: 26px; }
+  .hero-code { width: 54%; right: -25px; opacity: .65; }
+  .hero-copy { width: 58%; }
+  h1 { font-size: 31px; }
+}
+@media (max-width: 850px) {
+  .code-backdrop { left: 72px; }
+  header { min-height: 213px; }
+  .hero-copy { width: 67%; }
+  .hero-code { right: -115px; width: 70%; opacity: .25; }
+  .subtitle { font-size: 12px; }
+}
+@media (max-width: 520px) {
+  aside { backdrop-filter: none; }
+  .code-backdrop { left: 0; }
+  .code-backdrop pre:first-child { left: -70px; top: 170px; opacity: .06; font-size: 11px; }
+  .code-backdrop pre:last-child { left: -20px; opacity: .045; }
+  header { display: block; min-height: auto; padding: 25px 22px 23px; margin: 17px 0; border-radius: 13px; }
+  .hero-copy { width: 100%; }
+  .hero-code { display: none; }
+  h1 { font-size: 28px; letter-spacing: -1.3px; }
+  .subtitle { font-size: 11px; }
+  header > .badge { position: static; margin-top: 17px; }
+  .metrics { gap: 8px; }
+  .metrics article { padding: 14px 12px; border-radius: 10px; }
+  .metrics strong { font-size: 26px; }
+}
+

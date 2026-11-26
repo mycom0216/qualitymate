@@ -1,0 +1,85 @@
+<!doctype html>
+<!-- index.html  -  QualityMate 단일 화면 (뼈대만 있고 내용은 app.js가 채운다) -->
+<!-- 역할: 3단 작업 영역(제품 목록 / 검사 상세 / 품질관리 도우미)과 표준서 영역의 HTML 구조. -->
+<!--       제품 목록, 상세, 대화, 표준서 목록은 비어 있다가 app.js가 API 응답으로 채운다. -->
+<!-- 스타일: style.css(기본) -> code-theme.css -> polish.css -> rose.css 순으로 겹쳐 적용하며 뒤의 파일이 앞을 덮어쓴다. -->
+<!--         현재 화면은 마지막 rose.css의 밝은 핑크 코드 테마다. -->
+<!-- 주의: 아래 id(products, detail, conversation, question 등)는 app.js가 찾는 값이므로 바꾸면 화면이 동작하지 않는다. -->
+<html lang="ko">
+<head>
+<!-- app.js 주소의 ?v= 값은 캐시 갱신용 버전 표시이고, defer는 HTML을 모두 읽은 뒤 스크립트를 실행하라는 뜻이다. polish.js는 장식 효과 전용. -->
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>QualityMate · 검사 워크스페이스</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/code-theme.css"><link rel="stylesheet" href="/polish.css"><link rel="stylesheet" href="/rose.css"><script src="/app.js?v=20261121-ragfix" defer></script><script src="/polish.js" defer></script>
+</head>
+<body>
+<!-- 장식용 배경: InspectionStore.cs 코드 일부를 흐릿하게 깔아 둔 것이다(aria-hidden이라 스크린 리더는 무시). 기능과 무관. -->
+<div class="code-backdrop" aria-hidden="true"><pre><span class="code-keyword">using</span> <span class="code-keyword">var</span> connection = Open();
+<span class="code-keyword">using</span> <span class="code-keyword">var</span> transaction = connection.BeginTransaction();
+<span class="code-keyword">var</span> items = Read(connection, transaction);
+<span class="code-keyword">var</span> item = items.FirstOrDefault(x =&gt; x.Id == id);
+<span class="code-keyword">if</span> (item <span class="code-keyword">is</span> <span class="code-keyword">null</span>) <span class="code-keyword">return</span> Results.NotFound(<span class="code-keyword">new</span> { error = <span class="code-string">"제품을 찾을 수 없습니다."</span> });
+<span class="code-keyword">var</span> owner = items.FirstOrDefault(x =&gt; x.Reinspections.Any(r =&gt; r.RequestId == request.RequestId));
+<span class="code-keyword">var</span> previous = owner?.Reinspections.First(x =&gt; x.RequestId == request.RequestId);
+<span class="code-keyword">if</span> (previous <span class="code-keyword">is</span> not <span class="code-keyword">null</span>)
+{</pre><pre><span class="code-keyword">using</span> <span class="code-keyword">var</span> connection = Open();
+<span class="code-keyword">using</span> <span class="code-keyword">var</span> transaction = connection.BeginTransaction();
+<span class="code-keyword">var</span> items = Read(connection, transaction);
+<span class="code-keyword">var</span> item = items.FirstOrDefault(x =&gt; x.Id == id);
+<span class="code-keyword">if</span> (item <span class="code-keyword">is</span> <span class="code-keyword">null</span>) <span class="code-keyword">return</span> Results.NotFound(<span class="code-keyword">new</span> { error = <span class="code-string">"제품을 찾을 수 없습니다."</span> });
+<span class="code-keyword">var</span> owner = items.FirstOrDefault(x =&gt; x.Reinspections.Any(r =&gt; r.RequestId == request.RequestId));
+<span class="code-keyword">var</span> previous = owner?.Reinspections.First(x =&gt; x.RequestId == request.RequestId);
+<span class="code-keyword">if</span> (previous <span class="code-keyword">is</span> not <span class="code-keyword">null</span>)
+{</pre></div>
+<!-- 왼쪽 사이드바: 브랜드와 메뉴(검사 현황 / 작업표준서 영역으로 이동하는 앵커 링크). -->
+<aside>
+<a class="brand" href="/" aria-label="QualityMate 홈"><span class="brand-mark">Q</span><span>QualityMate</span></a>
+<p class="brand-caption">품질관리 워크스페이스</p>
+<nav aria-label="주 메뉴"><a class="nav-active" href="#workspace"><span aria-hidden="true">▦</span>검사 현황</a><a href="#standards"><span aria-hidden="true">▤</span>작업표준서</a></nav>
+<div class="sidebar-bottom"><span class="environment-dot"></span><div>로컬 워크스페이스<small>가상 제품 · 시연용 표준서</small></div></div>
+</aside>
+<!-- 본문 영역 시작. -->
+<main>
+<!-- 상단 바: 위치 표시(breadcrumb)와 로컬 세션 라벨. -->
+<div class="topbar"><span>워크스페이스 <span class="breadcrumb-divider">/</span> <b>품질 검사</b></span><span class="local-label">LOCAL SESSION</span></div>
+<!-- 머리 영역: 제목과 설명, 코드 모양 장식 창(hero-code, 장식용), AI 상태 배지(#ai-status는 app.js가 갱신). -->
+<header><div class="hero-copy"><h1>검사 워크스페이스<span class="title-dot">.</span></h1><p class="subtitle">검사 이력과 작업 기준을 연결하고,<br>다음 조치를 확인하세요.</p></div><div class="hero-code" aria-hidden="true"><div class="code-windowbar"><span class="window-dots"><i></i><i></i><i></i></span><span>InspectionStore.cs</span><span class="code-language">C#</span></div><pre><span class="code-keyword">using</span> <span class="code-keyword">var</span> connection = Open();
+<span class="code-keyword">using</span> <span class="code-keyword">var</span> transaction = connection.BeginTransaction();
+<span class="code-keyword">var</span> items = Read(connection, transaction);
+<span class="code-keyword">var</span> item = items.FirstOrDefault(x =&gt; x.Id == id);
+<span class="code-keyword">if</span> (item <span class="code-keyword">is</span> <span class="code-keyword">null</span>) <span class="code-keyword">return</span> Results.NotFound(<span class="code-keyword">new</span> { error = <span class="code-string">"제품을 찾을 수 없습니다."</span> });
+<span class="code-keyword">var</span> owner = items.FirstOrDefault(x =&gt; x.Reinspections.Any(r =&gt; r.RequestId == request.RequestId));
+<span class="code-keyword">var</span> previous = owner?.Reinspections.First(x =&gt; x.RequestId == request.RequestId);
+<span class="code-keyword">if</span> (previous <span class="code-keyword">is</span> not <span class="code-keyword">null</span>)
+{</pre></div><span id="ai-status" class="badge">AI 연결 확인 중</span></header>
+<!-- 요약 숫자 3개(전체 제품 / 최초 불합격 / 재검사 기록). 값은 app.js의 renderList가 채운다. -->
+<section class="metrics" aria-label="검사 요약">
+<article><div><span>전체 제품</span><strong id="total">—</strong></div><span class="metric-icon" aria-hidden="true">▦</span></article>
+<article class="metric-warning"><div><span>최초 불합격</span><strong id="failed">—</strong></div><span class="metric-icon" aria-hidden="true">!</span></article>
+<article class="metric-teal"><div><span>재검사 기록</span><strong id="retests">—</strong></div><span class="metric-icon" aria-hidden="true">↻</span></article>
+</section>
+<!-- 오류 알림 영역. aria-live라 내용이 바뀌면 스크린 리더가 읽어 준다(app.js showError). -->
+<div id="notice" role="status" aria-live="polite"></div>
+<!-- VisionQC CSV 가져오기(접이식). 파일 선택 후 제출하면 app.js가 /api/import/visionqc로 보내고 결과를 #import-status에 표시한다. -->
+<details class="import"><summary><span class="import-symbol" aria-hidden="true">↥</span>VisionQC 검사 결과 가져오기<span class="import-hint">CSV 가져오기</span></summary><div class="import-content"><p class="muted">VisionQC에서 내보낸 원본 검사 CSV를 선택하세요.</p><form id="import-form"><label>검사 결과 CSV<input id="csv-file" type="file" accept=".csv,text/csv" required></label><button class="primary" id="import-button">검사 결과 가져오기</button></form><p id="import-status" role="status"></p></div></details>
+<!-- 작업 영역: 제품 목록 | 검사 상세 | 품질관리 도우미의 3단 구성. -->
+<section id="workspace" class="workspace" aria-label="검사 작업 영역">
+<!-- 1단 제품 목록: 새로고침 버튼, 제품 번호 검색(#filter), 목록(#products는 app.js가 채움). -->
+<div class="card product-panel"><div class="panel-heading"><h2>제품 목록</h2><button id="refresh" class="quiet" title="새로고침" aria-label="새로고침">↻</button></div><label class="search"><span class="sr-only">제품 번호 검색</span><span aria-hidden="true">⌕</span><input id="filter" placeholder="제품 번호 검색" maxlength="60"></label><div class="list-heading"><span>제품 / LOT</span><span>현재 판정</span></div><div id="products"></div></div>
+<!-- 2단 검사 상세: 검사 기록, 이력, 재검사 입력 폼이 app.js의 renderDetail로 그려진다. -->
+<div id="detail" class="card detail-panel"></div>
+<!-- 3단 품질관리 도우미: 선택한 제품 표시, 추천 질문 버튼(data-question), 대화창(#conversation), 질문 입력 폼(#chat). -->
+<div class="card assistant">
+<div class="assistant-heading"><div class="assistant-mark" aria-hidden="true">✦</div><div><h2>품질관리 도우미</h2><p>작업표준서 기반 AI</p></div><span class="selected-product" id="selected-product">제품 선택</span></div>
+<!-- 추천 질문 버튼: 클릭하면 data-question 값이 입력칸에 채워진다(바로 전송하지 않음). -->
+<div class="suggestions"><button data-question="왜 불합격인가요? 재검사 절차를 알려주세요.">불합격 확인 · 재검사 절차 <span>↗</span></button><button data-question="출하 전에 무엇을 확인하나요?">출하 전 확인 사항 <span>↗</span></button></div>
+<div id="conversation" class="conversation" aria-live="polite"><div class="welcome"><span class="welcome-symbol" aria-hidden="true">✦</span><h3>판단에 필요한 근거를<br>함께 찾아보세요.</h3><p>선택한 제품에 대해 질문하면<br>검사 사실과 표준서 원문을 확인할 수 있어요.</p></div></div>
+<!-- 질문 입력 폼. 제출하면 app.js가 /api/chat으로 질문을 보낸다. 질문은 최대 2000자(서버도 같은 제한). -->
+<form id="chat"><label class="sr-only" for="question">검사 관련 질문</label><div class="composer"><textarea id="question" rows="2" maxlength="2000" required placeholder="이 제품을 어떻게 재검사하나요?"></textarea><div class="composer-bottom"><span>표준서의 근거와 함께 답변합니다</span><button id="ask" class="send-button" aria-label="질문 보내기">↗</button></div></div></form>
+</div>
+</section>
+<!-- 작업표준서 영역: /api/documents 결과를 절별 접이식으로 표시(#documents). 답변의 근거를 직접 대조해 볼 수 있다. -->
+<section id="standards" class="card standards"><div class="panel-heading"><div><h2>작업표준서</h2><p class="muted">검사 판단에 사용한 기준을 확인하세요.</p></div><span class="version">시연용 · v1.0</span></div><div id="documents"></div></section>
+<!-- 하단 안내: 최초 검사 기록과 재검사 이력을 함께 보존한다는 설명. -->
+<footer><span>QualityMate</span><span>최초 검사 기록과 재검사 이력을 함께 보존합니다.</span></footer>
+</main></body></html>
+

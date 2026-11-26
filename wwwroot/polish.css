@@ -1,0 +1,188 @@
+/* polish.css  -  표면 조명과 마감 효과 */
+/* 역할: 배경 그라데이션, 카드 가장자리 빛(포인터 위치 변수 --pointer-x/y, --surface-x/y는 polish.js가 설정), */
+/*       카드 hover/포커스 강조, 선택된 제품과 말풍선의 세부 마감. 기능과 무관한 꾸밈이다. */
+/* 순서: code-theme.css 다음, rose.css 이전에 로드된다. */
+
+/* Surface lighting and finishing details. */
+:root { --pointer-x: 72vw; --pointer-y: 180px; }
+body {
+  background:
+    radial-gradient(ellipse at 83% 0%, #24466e6b, transparent 45%),
+    radial-gradient(ellipse at 36% 30%, #164b4a3b, transparent 52%),
+    radial-gradient(ellipse at 98% 64%, #372b5c33, transparent 48%),
+    #070d16;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(420px circle at var(--pointer-x) var(--pointer-y), #62d6eb0d, transparent 75%);
+}
+body::before { background-size: 44px 44px; opacity: .8; }
+.code-backdrop pre:first-child { opacity: .13; }
+.code-backdrop pre:last-child { opacity: .085; }
+header {
+  min-height: 244px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background:
+    radial-gradient(ellipse at 8% 100%, #2a886b18, transparent 48%) padding-box,
+    linear-gradient(112deg, #132832f7, #111e34ed 58%, #17283bf2) padding-box,
+    linear-gradient(125deg, #6cdcc05c, #638fb52e 40%, #8e9df157) border-box;
+  box-shadow: 0 18px 65px #00000030, 0 0 60px #408dad0a, inset 0 1px 0 #d4f5ff12;
+}
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 12%;
+  width: 50%;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, #a3f2ddbd, #91c1fd7a, transparent);
+}
+h1 {
+  background: linear-gradient(110deg, #f4fbff 5%, #dfedff 60%, #83e6cf 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -1.65px;
+}
+.title-dot { color: #8aefd0; -webkit-text-fill-color: #8aefd0; }
+.subtitle { color: #a3b9cd; }
+.hero-code {
+  top: 18px;
+  right: 14px;
+  width: 55%;
+  height: 224px;
+  border-color: #91badc50;
+  background: linear-gradient(125deg, #102539ed, #0c192df0);
+  opacity: .96;
+  box-shadow: -28px 18px 80px #040e2159, 0 0 32px #5194c10c, inset 0 1px 0 #cdefff16;
+  transform: perspective(1200px) rotateY(-9deg) rotateZ(-2deg);
+}
+.hero-code pre { font-size: 12px; line-height: 1.85; color: #abc4d9; }
+.code-windowbar { background: linear-gradient(90deg, #29455a33, #26354e77); border-bottom-color: #7ba5c92e; }
+.code-keyword { color: #c5a9fc; }
+.code-string { color: #82e5bd; }
+.metrics article, .card, .import, .hero-code {
+  transition: border-color .2s, box-shadow .2s, background-color .2s;
+}
+.metrics article {
+  position: relative;
+  background:
+    radial-gradient(220px circle at var(--surface-x, 50%) var(--surface-y, 0%), #7fc1ee0a, transparent 70%),
+    linear-gradient(120deg, #1a293ce8, #111b2bdc);
+  box-shadow: 0 10px 28px #0000001c, inset 0 1px 0 #d5e9ff0e;
+}
+.metrics article::after {
+  content: "";
+  position: absolute;
+  inset: auto 20px 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #8da9e63b, transparent);
+  pointer-events: none;
+}
+.metric-warning::after { background: linear-gradient(90deg, transparent, #dfac7336, transparent) !important; }
+.metric-teal::after { background: linear-gradient(90deg, transparent, #6de4bd47, transparent) !important; }
+.metric-icon { border-radius: 12px; }
+.metrics strong { letter-spacing: -1.5px; text-shadow: 0 0 24px #93bff810; }
+.card {
+  background:
+    radial-gradient(320px circle at var(--surface-x, 50%) var(--surface-y, 0%), #729fdc0b, transparent 75%),
+    linear-gradient(145deg, #172538ef, #101b2bdd);
+  box-shadow: 0 15px 36px #00000027, inset 0 1px 0 #c5e8ff0d;
+}
+.card:hover, .metrics article:hover { border-color: #79b5d147; box-shadow: 0 16px 42px #0000002e, inset 0 1px 0 #cfedff13; }
+.card:focus-within { border-color: #73c6b256; }
+.product-panel .panel-heading h2, .standards .panel-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.product-panel .panel-heading h2::before, .standards .panel-heading h2::before {
+  content: "";
+  width: 3px;
+  height: 13px;
+  background: linear-gradient(#9eeed4, #3a9c94);
+  border-radius: 2px;
+}
+.product.active { box-shadow: inset 2px 0 0 #8df2cf, 0 0 20px #50ba8b0c; }
+.product.active b { text-shadow: 0 0 18px #a6f9df20; }
+.product:hover:not(.active) { background: #28405b4a; }
+.assistant {
+  background:
+    radial-gradient(350px circle at var(--surface-x, 30%) var(--surface-y, 0%), #5b8db616, transparent 75%),
+    linear-gradient(145deg, #193149f5, #11243bef 55%, #0e2036ef);
+  border-color: #78b9de65;
+  box-shadow: 0 18px 50px #020d2033, 0 0 50px #337c9e09, inset 0 1px 0 #d6efff17;
+}
+.assistant-heading { background: linear-gradient(105deg, #22607624, #27395f12); }
+.assistant-mark, .welcome-symbol { box-shadow: inset 0 1px 0 #ccfff229, 0 0 26px #7ae7cb12; }
+.bubble { box-shadow: 0 6px 20px #030b161c, inset 0 1px 0 #c4e7ff05; }
+.cite { border: 1px solid #8fd7b523; background: #224b40; }
+.composer { border-radius: 11px; box-shadow: inset 0 2px 7px #0003, 0 1px 0 #b1d5ee08; }
+.primary:hover:not(:disabled), .send-button:hover:not(:disabled) { box-shadow: 0 0 25px #67dbb52e, inset 0 1px 0 #e0fff6; }
+@media (min-width: 1231px) {
+  aside {
+    inset: 14px auto 14px 14px;
+    width: 186px;
+    padding: 23px 14px 19px;
+    border: 1px solid #95bfd426;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px #00000035, inset 0 1px 0 #c0e8fa08;
+  }
+  .brand { font-size: 17px; gap: 8px; }
+  .brand-caption { margin-left: 41px; font-size: 9px; }
+  nav a { padding: 12px; }
+  .sidebar-bottom { padding-inline: 2px; }
+}
+@media (prefers-reduced-motion: no-preference) and (min-width: 851px) {
+  .metrics article { animation: surface-enter .5s both; }
+  .metrics article:nth-child(2) { animation-delay: .06s; }
+  .metrics article:nth-child(3) { animation-delay: .12s; }
+  .workspace { animation: surface-enter .6s .12s both; }
+}
+@media (min-width: 851px) and (max-width: 1230px) {
+  aside {
+    inset: 14px auto 14px 14px;
+    width: 164px;
+    padding: 23px 14px 19px;
+    border: 1px solid #95bfd426;
+    border-radius: 15px;
+    box-shadow: 0 15px 50px #00000035, inset 0 1px 0 #c0e8fa08;
+  }
+  .brand { font-size: 15px; gap: 8px; }
+  .brand-caption { margin-left: 40px; font-size: 9px; }
+  nav a { padding: 12px 10px; font-size: 12px; }
+  .sidebar-bottom { padding-inline: 0; font-size: 9px; }
+}
+@keyframes surface-enter {
+  from { opacity: 0; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 1230px) {
+  .hero-code { right: -20px; width: 56%; opacity: .72; }
+  .hero-code pre { font-size: 11px; }
+}
+@media (max-width: 850px) {
+  .hero-code { right: -115px; width: 70%; opacity: .25; }
+}
+@media (max-width: 520px) {
+  header { min-height: auto; border-radius: 14px; }
+  .hero-code { display: none; }
+  .code-backdrop pre:first-child { opacity: .06; }
+  .code-backdrop pre:last-child { opacity: .045; }
+  body::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::after { display: none; }
+  .metrics article, .card, .import, .hero-code, .workspace { animation: none; transition: none; }
+}
+@media (prefers-contrast: more) {
+  .card, .metrics article { background: #111d2c; border-color: #7897b3; }
+  .code-backdrop { display: none; }
+}
+

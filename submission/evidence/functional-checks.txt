@@ -1,0 +1,17 @@
+PASS seed products
+PASS preserve original and append
+PASS idempotent retry
+PASS stale revision rejected
+PASS invalid operator rejected
+PASS unknown product rejected
+PASS empty question rejected
+PASS unsupported question
+PASS live LLM and relevant evidence
+PASS saved history
+PASS SQLite database created
+PASS VisionQC NG and ERROR import
+PASS duplicate CSV idempotent
+PASS conflicting source rejected
+PASS invalid CSV rejected
+PASS atomic import and ERROR preserved
+PASS restart preserves SQLite history

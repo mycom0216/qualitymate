@@ -1,0 +1,55 @@
+[
+  {
+    "name": "valid",
+    "pass_": true,
+    "mode": "llm"
+  },
+  {
+    "name": "empty",
+    "pass_": true,
+    "mode": "source-only"
+  },
+  {
+    "name": "missing-message",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "bad-json",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "out-of-range",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "negative",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "wrong-type",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "too-many",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "http-error",
+    "pass_": true,
+    "mode": "retrieval-only"
+  },
+  {
+    "name": "malformed tags status",
+    "pass_": true
+  },
+  {
+    "name": "unanswerable skips LLM",
+    "pass_": true
+  }
+]

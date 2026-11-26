@@ -1,0 +1,18 @@
+{
+  "testedAt": "2026-11-20T00:14:42.5820575+09:00",
+  "cases": [
+    {
+      "case": "complete runtime and installed AI",
+      "exit": 0
+    },
+    {
+      "case": "missing model detected without downloading",
+      "exit": 2
+    },
+    {
+      "case": "invalid configuration rejected",
+      "exit": 1
+    }
+  ],
+  "passed": true
+}

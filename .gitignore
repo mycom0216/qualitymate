@@ -1,0 +1,9 @@
+bin/
+obj/
+output/
+tmp/
+data/
+submission/runtime/
+*.zip
+.env
+__pycache__/

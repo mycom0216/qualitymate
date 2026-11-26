@@ -1,0 +1,320 @@
+{
+  "base": "http://127.0.0.1:5202",
+  "results": [
+    {
+      "name": "fixed-1",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-2",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-3",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-4",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-5",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-6",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-7",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-8",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-9",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-10",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-11",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-12",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-13",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-14",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-15",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-16",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-17",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-18",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-19",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "fixed-20",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 제품 가격은 얼마인가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 검사 장비 구입 예산은 얼마인가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 재검사 비용은 얼마인가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 흠집 제품은 반품하나요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 이물 제품은 폐기해도 되나요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 통화 기록 삭제 방법",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 음식 보관 방법",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 분리수거 방법",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 제품 사진은 어떻게 찍나요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 검사 장비 구매",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 서울 맛집 추천",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "reject: 원인 분석 비용은?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "supported: 다시 검사할 때 뭘 적어야 해요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "supported: 불량 원인이 뭔가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "supported: 흠집 원인을 확정할 수 있나요? 그리고 재검사 기록에는 무엇이 필요한가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "supported: 이물 제품은 어떻게 보관하고 재검사할 때 뭘 기록해야 하나요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "record: 왜 불합격인가요?",
+      "pass_": true,
+      "detail": {
+        "mode": "record",
+        "answer": "이 제품에는 불합격 기록이 없습니다. 현재 검사 기록을 확인하세요.",
+        "facts": "제품 QM-002, 최초 판정 PASS, 검사 관찰 특이사항 없음, 최신 판정 PASS, 재검사 0회. 원인 확정 기록 없음.",
+        "sources": [],
+        "model": null
+      }
+    },
+    {
+      "name": "record: 이 제품의 최초 판정과 현재 판정은?",
+      "pass_": true,
+      "detail": {
+        "mode": "record",
+        "answer": "QM-001의 최초 판정은 불합격, 현재 판정은 불합격입니다.",
+        "facts": "제품 QM-001, 최초 판정 FAIL, 검사 관찰 표면 흠집 의심, 최신 판정 FAIL, 재검사 0회. 원인 확정 기록 없음.",
+        "sources": [],
+        "model": null
+      }
+    },
+    {
+      "name": "record: 재검사 횟수는 몇 번인가요?",
+      "pass_": true,
+      "detail": {
+        "mode": "record",
+        "answer": "QM-001의 재검사 횟수는 0회입니다.",
+        "facts": "제품 QM-001, 최초 판정 FAIL, 검사 관찰 표면 흠집 의심, 최신 판정 FAIL, 재검사 0회. 원인 확정 기록 없음.",
+        "sources": [],
+        "model": null
+      }
+    },
+    {
+      "name": "record: 이 제품 LOT는?",
+      "pass_": true,
+      "detail": {
+        "mode": "record",
+        "answer": "QM-001의 LOT는 LOT-DEMO-A입니다.",
+        "facts": "제품 QM-001, 최초 판정 FAIL, 검사 관찰 표면 흠집 의심, 최신 판정 FAIL, 재검사 0회. 원인 확정 기록 없음.",
+        "sources": [],
+        "model": null
+      }
+    },
+    {
+      "name": "no false citations: 검사 장비 구입 예산은 얼마인가요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "no false citations: 흠집 제품은 반품하나요?",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "empty chat 400",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "missing product 404",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "append preserves original; idempotent retry",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "same request different content 409",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "stale revision 409",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "concurrent writers 200/409",
+      "pass_": true,
+      "detail": [
+        200,
+        409
+      ]
+    },
+    {
+      "name": "UTF-8 BOM CSV accepted; duplicate skipped",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "ERROR preserved",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "ERROR is not a failed inspection",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "unknown NG defect not invented",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "timestamp without timezone rejected",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "UTF-8 bytes over 1 MB rejected",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "invalid header rejected",
+      "pass_": true,
+      "detail": null
+    },
+    {
+      "name": "conflicting CSV rejected",
+      "pass_": true,
+      "detail": null
+    }
+  ],
+  "modes": {
+    "source-only": 8,
+    "llm": 12,
+    "no-evidence": 18,
+    "record": 6
+  },
+  "passed": 56,
+  "total": 56
+}

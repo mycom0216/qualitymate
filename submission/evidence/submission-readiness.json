@@ -1,0 +1,27 @@
+{
+  "updatedAt": "2026-11-20",
+  "projectType": "individual",
+  "authorName": null,
+  "completed": [
+    "light pink code theme desktop and mobile",
+    "17 function checks",
+    "packaged EXE with real AI and CSV",
+    "native environment diagnostics: ready/missing model/invalid JSON",
+    "browser file selection and duplicate CSV handling",
+    "plan/report/PPT/source/runtime"
+  ],
+  "pending": [
+    {
+      "item": "author name",
+      "reason": "not supplied by user"
+    },
+    {
+      "item": "PowerPoint slide show and other presentation PC",
+      "reason": "native launch automation did not complete; another PC unavailable"
+    }
+  ],
+  "outsideScope": [
+    "real camera inference",
+    "production deployment"
+  ]
+}

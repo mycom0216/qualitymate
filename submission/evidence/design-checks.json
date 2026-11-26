@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-20",
+  "desktop": {
+    "viewport": [
+      999,
+      883
+    ],
+    "horizontalOverflow": false,
+    "layout": "제품 목록과 AI 2열, 상세 영역 아래 배치"
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "horizontalOverflow": false
+  },
+  "verified": [
+    "제품 선택 시 상세와 AI 제품 표시 변경",
+    "실제 LLM 응답과 출처 펼치기",
+    "검사 오류의 독립적인 상태 색상",
+    "JavaScript 문법 검사",
+    "자체 포함 실행 파일의 화면·AI·CSV 저장",
+    "제품 검색 후 실제 LLM 응답 확인",
+    "포인터 이동에 따른 조명 좌표 갱신",
+    "모바일 390px 가로 넘침 없음",
+    "핑크 테마 실제 LLM 답변",
+    "390px 모바일 핑크 테마 가로 넘침 없음",
+    "원본 CSV 파일 선택 및 버튼 제출: 0건 추가, 3건 중복 제외"
+  ],
+  "palette": [
+    "#fff3f7",
+    "#fce5ef",
+    "#ae356f"
+  ],
+  "fonts": "Windows 로컬 글꼴과 Consolas 사용, 외부 폰트 요청 없음",
+  "designVersion": 5,
+  "codeBackground": {
+    "desktopVisible": true,
+    "role": "장식용 실제 코드 발췌",
+    "source": "InspectionStore.cs",
+    "pointerEvents": "none",
+    "screenReaderHidden": true,
+    "mobileHeroHidden": true
+  },
+  "screenshot": "design-v5-rose.jpg",
+  "captureViewport": [
+    999,
+    883
+  ],
+  "browserErrors": [],
+  "accessibilityGuards": [
+    "터치 및 모션 감소 설정에서 포인터 조명 제외",
+    "모션 감소 CSS 규칙",
+    "고대비 CSS 규칙"
+  ],
+  "theme": "Rose Code / light"
+}

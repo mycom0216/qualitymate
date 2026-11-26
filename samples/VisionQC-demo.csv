@@ -1,0 +1,4 @@
+Id,JobId,InspectedAtUtc,OriginalVerdict,DefectScore,ElapsedMs,ImagePath,ErrorMessage
+"1","2","2026-11-19T01:00:00.0000000Z","NG","0.75","21","demo-ng.png",""
+"2","2","2026-11-19T01:01:00.0000000Z","OK","0.1","19","demo-ok.png",""
+"3","2","2026-11-19T01:02:00.0000000Z","ERROR","","12","unreadable.png","Demo read error"
